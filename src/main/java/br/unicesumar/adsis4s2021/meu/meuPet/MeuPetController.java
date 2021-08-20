@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/meu-pet")
+@RequestMapping("/meus-pets")
 public class MeuPetController {
 	//conectar no banco
 	@Autowired
