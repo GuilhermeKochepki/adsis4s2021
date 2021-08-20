@@ -25,19 +25,19 @@ public class MeuPetController {
 	
 	//retornar
 	@GetMapping
-	public List<MeuPet> getProdutos() {
+	public List<MeuPet> getPet() {
 		return repo.findAll();
 	}
 	
 	//incluir
 	@PostMapping
-	public String postProduto(@RequestBody MeuPet novo) {
+	public String postPet(@RequestBody MeuPet novo) {
 		novo = repo.save(novo);
 		return novo.getId();
 	}
 	
 	@GetMapping("/{id}")
-	public MeuPet getProdutoPeloId(@PathVariable ("id") String id) {
+	public MeuPet getPetPeloId(@PathVariable ("id") String id) {
 		return repo.findById(id).get();
 	}
 
