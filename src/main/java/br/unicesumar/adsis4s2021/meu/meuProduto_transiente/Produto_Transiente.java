@@ -1,4 +1,4 @@
-package br.unicesumar.adsis4s2021.meu.produto_transiente;
+package br.unicesumar.adsis4s2021.meu.meuProduto_transiente;
 
 public class Produto_Transiente {
 	private String id;
