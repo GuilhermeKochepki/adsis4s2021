@@ -1,4 +1,4 @@
-package br.unicesumar.adsis4s2021.meu.meuBase;
+package br.unicesumar.adsis4s2021.meu.MeuBase;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -9,14 +9,13 @@ public class MeuBaseEntity {
 	private String id;
 	
 	public MeuBaseEntity() {
+
 	}
-	
 	public MeuBaseEntity(String id) {
 		this.id = id;
 	}
-
+	
 	public String getId() {
 		return id;
 	}
-
 }

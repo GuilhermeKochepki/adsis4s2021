@@ -1,4 +1,4 @@
-package br.unicesumar.adsis4s2021.meu.meuBase;
+package br.unicesumar.adsis4s2021.meu.MeuBase;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public class MeuBaseController <ENTITY extends MeuBaseEntity, REPO extends JpaRepository<ENTITY, String>> {
+public class MeuBaseController<ENTITY extends MeuBaseEntity, REPO extends JpaRepository<ENTITY, String>> {
 	@Autowired
 	private REPO repo;
-
+	
 	@DeleteMapping("/{id}")
 	public void deletePeloId(@PathVariable("id") String id) {
 		repo.deleteById(id);
@@ -24,6 +24,7 @@ public class MeuBaseController <ENTITY extends MeuBaseEntity, REPO extends JpaRe
 	public ENTITY getPeloId(@PathVariable("id") String id) {
 		return repo.findById(id).get();
 	}
+
 	
 	@GetMapping
 	public List<ENTITY> getAll() {
