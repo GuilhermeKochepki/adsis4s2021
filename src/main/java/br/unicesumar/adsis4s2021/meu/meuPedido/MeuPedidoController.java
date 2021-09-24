@@ -1,6 +1,7 @@
 package br.unicesumar.adsis4s2021.meu.meuPedido;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,5 +30,10 @@ public class MeuPedidoController extends MeuBaseController<MeuPedido, MeuPedidoR
 		}
 		novo = repo.save(novo);
 		return novo.getId();
+	}
+	
+	@GetMapping("/meu-total-vendido-por-produto")
+	public List<Map<String, Object>> getTotalVendidoPorProduto() {
+		return repo.consultarTotalVendidoPorProduto();
 	}
 }

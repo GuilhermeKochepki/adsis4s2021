@@ -1,11 +1,11 @@
 package br.unicesumar.adsis4s2021.meu.meuProduto_transiente;
 
-public class Produto_Transiente {
+public class MeuProdutoTransiente {
 	private String id;
 	private String nome;
 	private double preco;
 	
-	public Produto_Transiente(String id, String nome, double preco) {
+	public MeuProdutoTransiente(String id, String nome, double preco) {
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
