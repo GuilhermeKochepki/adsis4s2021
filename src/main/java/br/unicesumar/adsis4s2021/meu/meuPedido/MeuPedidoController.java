@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseController;
+
 @RestController
 @RequestMapping("/meus-pedidos")
-public class MeuPedidoController {
+public class MeuPedidoController extends MeuBaseController<MeuPedido, MeuPedidoRepository>{
 	@Autowired
 	private MeuPedidoRepository repo;
 	

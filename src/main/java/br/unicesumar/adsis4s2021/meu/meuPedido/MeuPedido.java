@@ -5,17 +5,15 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseEntity;
 import br.unicesumar.adsis4s2021.meu.meuPessoa.MeuPessoa;
 
 @Entity
-public class MeuPedido {
-	@Id
-	private String id;
+public class MeuPedido extends MeuBaseEntity{
 	private Long numero;
 	private Date emitidoEm;
 	
@@ -33,16 +31,12 @@ public class MeuPedido {
 	public Date getEmitidoEm() {
 		return emitidoEm;
 	}
-	public String getId() {
-		return id;
-	}
 	public Long getNumero() {
 		return numero;
 	}
 	public List<MeuItemPedido> getItens() {
 		return itens;
 	}
-	
 	public MeuPessoa getCliente() {
 		return cliente;
 	}

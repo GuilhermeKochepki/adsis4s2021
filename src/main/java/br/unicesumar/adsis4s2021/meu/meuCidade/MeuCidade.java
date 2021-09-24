@@ -1,21 +1,16 @@
-package br.unicesumar.adsis4s2021.meu.meuPessoa;
+package br.unicesumar.adsis4s2021.meu.meuCidade;
 
 import javax.persistence.Entity;
 
 import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseEntity;
 
 @Entity
-public class MeuPessoa extends MeuBaseEntity{
+public class MeuCidade extends MeuBaseEntity{
 	private String nome;
 	
-	public MeuPessoa() {
+	public MeuCidade() {
 	}
 	
-	public MeuPessoa(String id, String nome) {
-		super(id);
-		this.nome = nome;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -23,4 +18,5 @@ public class MeuPessoa extends MeuBaseEntity{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 }

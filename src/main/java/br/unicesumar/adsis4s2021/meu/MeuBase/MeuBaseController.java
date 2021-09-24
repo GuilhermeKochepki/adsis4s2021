@@ -33,7 +33,7 @@ public class MeuBaseController<ENTITY extends MeuBaseEntity, REPO extends JpaRep
 	
 	@PostMapping
 	public String post(@RequestBody ENTITY novo) {
-		if (repo.findById(novo.getId()).isPresent()) {
+		if (novo.getId() != null && repo.findById(novo.getId()).isPresent()) {
 			throw new RuntimeException("Seu registro já existe, faça um put ao invés de post!");
 		}
 		novo = repo.save(novo);
