@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseEntity;
 
 @Entity
@@ -35,6 +37,7 @@ public class MeuPessoa extends MeuBaseEntity{
 		this.nome = nome;
 	}
 	
+	//@JsonIgnore
 	public List<MeuEndereco> getEnderecos() {
 		return enderecos;
 	}

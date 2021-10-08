@@ -13,15 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseController;
 
 @RestController
-@RequestMapping("/meus-pedidos")
+@RequestMapping("/meu-pedidos")
 public class MeuPedidoController extends MeuBaseController<MeuPedido, MeuPedidoRepository>{
 	@Autowired
 	private MeuPedidoRepository repo;
 	
-	@GetMapping
-	public List<MeuPedido> getAll() {
-		return repo.findAll();
-	}
+	//@GetMapping
+	//public List<MeuPedidoDTO> getAll() {
+	//	List<MeuPedidoDTO> meuPedidosDTO  = repo.MeuEncontrarTodosComoDTO();
+	//	for (MeuPedidoDTO pedidoDTO : meuPedidosDTO) {
+	//		pedidoDTO.setItens(repo.encontrarItensPedidoDoPedidoDTO(pedidoDTO.getId()));
+	//	}
+	//	return meuPedidosDTO;
+	//}
 	
 	@PostMapping
 	public String post(@RequestBody MeuPedido novo) {

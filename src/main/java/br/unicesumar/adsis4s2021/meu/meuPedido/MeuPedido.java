@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseEntity;
 import br.unicesumar.adsis4s2021.meu.meuPessoa.MeuPessoa;
 
