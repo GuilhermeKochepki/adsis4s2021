@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseController;
+import br.unicesumar.adsis4s2021.meu.meuPedido.dto.MeuPedidoDTO;
+import br.unicesumar.adsis4s2021.meu.meuPedido.dto.MeuTotalVendidoDoProdutoDTO;
 
 @RestController
 @RequestMapping("/meu-pedidos")
 public class MeuPedidoController extends MeuBaseController<MeuPedido, MeuPedidoRepository>{
 	@Autowired
-	private MeuPedidoRepository repo;
+	private MeuPedidoRepository service;
 	
 	//@GetMapping
 	//public List<MeuPedidoDTO> getAll() {
@@ -27,17 +29,23 @@ public class MeuPedidoController extends MeuBaseController<MeuPedido, MeuPedidoR
 	//	return meuPedidosDTO;
 	//}
 	
+	@GetMapping
+	public List<MeuPedidoDTO> getAll() {
+		return service.getAll();
+	}
+	
 	@PostMapping
 	public String post(@RequestBody MeuPedido novo) {
-		if (repo.findById(novo.getId()).isPresent()) {
-			throw new RuntimeException("Seu pedido já existe, faça um put ao invés de post!");
-		}
-		novo = repo.save(novo);
-		return novo.getId();
+		return service.insert(novo);
 	}
 	
 	@GetMapping("/meu-total-vendido-por-produto")
 	public List<Map<String, Object>> getTotalVendidoPorProduto() {
-		return repo.consultarTotalVendidoPorProduto();
+		return service.consultarTotalVendidoPorProduto();
+	}
+	
+	@GetMapping("/meu-total-vendido-por-produto-DTO")
+	public List<MeuTotalVendidoDoProdutoDTO> getTotalVendidoPorProdutoDTO() {
+		return service.consultarTotalVendidoPorProdutoDTO();
 	}
 }
