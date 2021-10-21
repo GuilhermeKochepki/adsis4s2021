@@ -10,24 +10,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.unicesumar.adsis4s2021.meu.MeuBase.MeuBaseController;
 import br.unicesumar.adsis4s2021.meu.meuPedido.dto.MeuPedidoDTO;
 import br.unicesumar.adsis4s2021.meu.meuPedido.dto.MeuTotalVendidoDoProdutoDTO;
 
 @RestController
 @RequestMapping("/meu-pedidos")
-public class MeuPedidoController extends MeuBaseController<MeuPedido, MeuPedidoRepository>{
+public class MeuPedidoController{
 	@Autowired
-	private MeuPedidoRepository service;
-	
-	//@GetMapping
-	//public List<MeuPedidoDTO> getAll() {
-	//	List<MeuPedidoDTO> meuPedidosDTO  = repo.MeuEncontrarTodosComoDTO();
-	//	for (MeuPedidoDTO pedidoDTO : meuPedidosDTO) {
-	//		pedidoDTO.setItens(repo.encontrarItensPedidoDoPedidoDTO(pedidoDTO.getId()));
-	//	}
-	//	return meuPedidosDTO;
-	//}
+	private MeuPedidoService service;
 	
 	@GetMapping
 	public List<MeuPedidoDTO> getAll() {

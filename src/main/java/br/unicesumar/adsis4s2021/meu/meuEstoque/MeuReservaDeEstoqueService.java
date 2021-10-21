@@ -1,13 +1,9 @@
-package br.unicesumar.adsis4s2021.meu.meuCidade;
+package br.unicesumar.adsis4s2021.meu.meuEstoque;
 
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import br.unicesumar.adsis4s2021.meu.meuEstoque.MeuReservaDeEstoque;
-import br.unicesumar.adsis4s2021.meu.meuEstoque.MeuReservaDeEstoqueExcedidaException;
-import br.unicesumar.adsis4s2021.meu.meuEstoque.MeuReservaDeEstoqueRepository;
 
 @Service
 public class MeuReservaDeEstoqueService {
